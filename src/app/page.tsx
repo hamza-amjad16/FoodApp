@@ -1,5 +1,6 @@
+import Testimonial from "@/components/Testimonial";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Clock, Leaf, Utensils } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -45,6 +46,40 @@ export default function Home() {
           </div>
         </section>
         {/* Featured Section */}
+        <section className="container mx-auto py-16 bg-secondary/10">
+          <div className="container">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background">
+                <Clock className="h-10 w-10 mb-4 text-primary" />
+                <h3 className="text-xl font-bold mb-2">Open Daily</h3>
+                <p className="text-muted-foreground">
+                  Monday - Sunday: 11am - 10pm
+                </p>
+              </div>
+               <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background">
+                <Utensils className="h-10 w-10 mb-4 text-primary" />
+                <h3 className="text-xl font-bold mb-2">Diverse Menu</h3>
+                <p className="text-muted-foreground">
+                  50+ dishes crafted by our masterchef
+                </p>
+              </div>
+               <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background">
+                <Leaf className="h-10 w-10 mb-4 text-primary" />
+                <h3 className="text-xl font-bold mb-2">Fresh Ingredients</h3>
+                <p className="text-muted-foreground">
+                  Locally sourced, organic produce
+                </p>
+              </div>
+              <div> 
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Menu Preview Section */}
+        {/* Testimonials */}
+        <Testimonial />
+        {/* CTA Section */}
+
       </main>
     </div>
   );

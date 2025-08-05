@@ -1,3 +1,5 @@
+import CTA from "@/components/cta-section";
+import {Footer} from "@/components/Footer";
 import Testimonial from "@/components/Testimonial";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Clock, Leaf, Utensils } from "lucide-react";
@@ -79,8 +81,9 @@ export default function Home() {
         {/* Testimonials */}
         <Testimonial />
         {/* CTA Section */}
-
+        <CTA />
       </main>
+      <Footer />
     </div>
   );
 }

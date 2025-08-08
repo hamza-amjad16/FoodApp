@@ -1,3 +1,4 @@
+import DeleteMenuButton from "@/components/DeleteMenuButton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TableBody, TableHead, TableHeader, TableRow, Table, TableCell } from "@/components/ui/table";
 import { prisma } from "@/lib/prisma";
@@ -40,7 +41,7 @@ const page = async(props: Props) => {
                         {/* Update Menu */}
                         
                         {/* Delete Menu */}
-
+                      <DeleteMenuButton id={item.id} />
                         </div>
                       </TableCell>
 

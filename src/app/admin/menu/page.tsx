@@ -40,7 +40,7 @@ const page = async(props: Props) => {
                       <TableCell className="text-right">
                         <div className="flex justify-end space-x-2">
                         {/* Update Menu */}
-                        <UpdateMenuButton />
+                        <UpdateMenuButton item={item} />
                         {/* Delete Menu */}
                       <DeleteMenuButton id={item.id} />
                         </div>

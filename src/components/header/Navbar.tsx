@@ -26,7 +26,7 @@ const Navbar = (props: Props) => {
             <Link className="text-sm font-medium" href={"/about"}>
               About
             </Link>
-            <Link className="text-sm font-medium" href={"/admin"}>
+            <Link className="text-sm font-medium" href={"/admin/menu/create"}>
               Admin
             </Link>
           </nav>

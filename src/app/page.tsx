@@ -1,10 +1,12 @@
 import CTA from "@/components/cta-section";
 import {Footer} from "@/components/Footer";
+import MenuPreview from "@/components/MenuPreview";
 import Testimonial from "@/components/Testimonial";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Clock, Leaf, Utensils } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -78,6 +80,9 @@ export default function Home() {
           </div>
         </section>
         {/* Menu Preview Section */}
+        <Suspense fallback={<h1>Loading...</h1>}>
+        <MenuPreview />
+        </Suspense>
         {/* Testimonials */}
         <Testimonial />
         {/* CTA Section */}

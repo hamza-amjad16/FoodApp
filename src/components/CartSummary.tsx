@@ -1,11 +1,39 @@
-import React from 'react'
+"use client";
+import React from "react";
+import { Button } from "./ui/button";
+import { useStore } from "../../store/store";
 
-type Props = {}
+type Props = {};
 
 const CartSummary = (props: Props) => {
+  const cartItem = useStore((store) => store.cart);
+  const subTotal = cartItem.reduce(
+    (total, item) => total + Number(item.price) * item.quantity,
+    0
+  );
+  const tax = subTotal * 0.08 
+  const total = subTotal + tax
   return (
-    <div>CartSummary</div>
-  )
-}
+    <div className="space-y-4">
+      <h3 className="font-semibold text-lg">Order Summary</h3>
+      <div className="space-y-2">
+        <div className="flex justify-between">
+          <span>Subtotal</span>
+        <span>${subTotal}</span>
+        </div>
+        <div className=" flex justify-between">
+          <span>Tax (8%)</span>
+          <span>${tax.toFixed(2)}</span>
+        </div>
+        <hr />
+        <div className="flex justify-between font-semibold">
+          <span>Total</span>
+          <span>${total.toFixed(2)}</span>
+        </div>
+      </div>
+      <Button className="w-full">Proceed to Checkout</Button>
+    </div>
+  );
+};
 
-export default CartSummary
+export default CartSummary;

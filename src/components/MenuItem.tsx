@@ -33,7 +33,7 @@ const Menuitem = ({ item }: Props) => {
         <p className="text-muted-foreground mt-1 text-sm">{item.description}</p>
       </CardContent>
       <CardFooter className="flex justify-between items-center">
-        <span className="font-bold">{item.price}$</span>
+        <span className="font-bold">${item.price}</span>
         <Button
           onClick={() => addToCart(item)}
           size={"sm"}

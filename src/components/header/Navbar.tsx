@@ -5,11 +5,13 @@ import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { SignedIn, UserButton } from "@clerk/nextjs";
+import { useStore } from "../../../store/store";
+
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-  const cart = [1, 2, 3];
+  const cart = useStore((store) => store.cart)
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">

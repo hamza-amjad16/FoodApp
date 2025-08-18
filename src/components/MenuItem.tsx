@@ -1,15 +1,18 @@
+"use client"
 import type { MenuItem } from "@/generated/prisma";
 import React from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Image, ImageKitProvider } from "@imagekit/next";
 import { Button } from "./ui/button";
 import { Plus } from "lucide-react";
+import { useStore } from "../../store/store";
 
 type Props = {
   item: MenuItem;
 };
 
 const Menuitem = ({ item }: Props) => {
+  const addToCart = useStore((state) => state.addToCart);
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg">
       <CardHeader className="p-0 pb-4">
@@ -31,9 +34,13 @@ const Menuitem = ({ item }: Props) => {
       </CardContent>
       <CardFooter className="flex justify-between items-center">
         <span className="font-bold">{item.price}$</span>
-        <Button size={"sm"} className="gap-1 cursor-pointer">
-            <Plus className="h-4 w-4" />
-            Add to Cart
+        <Button
+          onClick={() => addToCart(item)}
+          size={"sm"}
+          className="gap-1 cursor-pointer"
+        >
+          <Plus className="h-4 w-4" />
+          Add to Cart
         </Button>
       </CardFooter>
     </Card>
